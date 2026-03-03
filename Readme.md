@@ -64,21 +64,17 @@ cd Java-Algorithm-Visualizer
 ```
 <br>
 
-**2. Compile the Source Code**
+**2. Compile the Source Code and run**
 
 ```bash
 # Windows
-dir /s /b *.java > sources.txt
-javac @sources.txt -d out
+javac -d bin src/main/*.java src/main/ui/*.java src/main/core/*.java src/main/algorithms/*.java
+java -cp bin main.Application
+
 
 # Linux/Mac
-find . -name "*.java" > sources.txt
-javac @sources.txt -d out
-
-```
-**3. Run the Application**
-
-```bash
-java -cp out main.Application
-
+find src -name "*.java" > sources.txt
+javac -d bin @sources.txt
+rm sources.txt
+java -cp bin main.Application
 ```
